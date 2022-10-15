@@ -1,4 +1,4 @@
-Exercícios - criação de arquivos e diretórios
+## Exercícios - criação de arquivos e diretórios
 
 
 Dica: Para criação de arquivos vazios, você pode utilizar o comando touch nome-do-arquivo.extensao.
@@ -55,7 +55,7 @@ Apague todos os arquivos que terminem em .txt.
 
 
 
-Exercícios - manipulação & busca
+## Exercícios - manipulação & busca
 
 1- Crie um novo diretório chamado unix_tests_search e entre nele. 
 
