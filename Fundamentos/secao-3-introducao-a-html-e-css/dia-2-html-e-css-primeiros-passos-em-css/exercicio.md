@@ -23,3 +23,8 @@ Troque a cor de fundo de cada item da lista para a cor correspondente ao texto.
 
 Link de referência para propriedades de texto em CSS
 
+# CSS inline e externo
+
+Hora de aprender algumas formas de adicionar o CSS nas páginas web:
+
+Coloque todo o CSS da tag style em um arquivo externo.
