@@ -33,4 +33,7 @@ Porcentagem >= 50 -> E
 Porcentagem < 50 -> F
 O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.
 --------------------------------------------------------------------------------------------------------
+Utilize if/else para fazer um programa que defina três números em constantes e retorne true se pelo menos uma das três for par. Caso contrário, ele deve retornar false.
+Bonus: use somente um if.
+--------------------------------------------------------------------------------------------------------
 
