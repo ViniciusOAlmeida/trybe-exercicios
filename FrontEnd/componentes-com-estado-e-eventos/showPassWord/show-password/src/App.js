@@ -54,10 +54,10 @@ functio constructor().
  o super() dentro do componente, chama a constructor do react.component, isso é
  importante para garantir um bom funcionamento do nosso componente.
 
- setState: é a função que modifica o valor do estado, essa função 
- está dentro da classe, para isso usamos this.setState() ela recebe dois parametro
- o primeiro é o novo estado que queremos alterar. Esse novo estado é um objeto, sempre
- um objeto, pq nosso estado é um objeto.
+setState: é a função que modifica o valor do estado, essa função 
+está dentro da classe, para isso usamos this.setState() ela recebe dois parametro
+o primeiro é o novo estado que queremos alterar. Esse novo estado é um objeto, sempre
+um objeto, pq nosso estado é um objeto.
 o valor passado é a chave do objeto que queremos alterar. nesse caso a chave inputType
 e o valor que queremos alterar é para text, mas podemos fazer uma condicional para ir e voltar de text para password,
 é necessário tambem usar um bind, sem isso não consegue acessar o setState do this,
