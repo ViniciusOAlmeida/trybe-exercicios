@@ -1,11 +1,15 @@
 import React from "react";
 
-class PasswordInput extends React.Component {
+
+
+class Input extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      inputType: 'password' /*Agora só precisamos alterar esse estado para mudar o comportamento*/
+      inputType: 'password', /*Agora só precisamos alterar esse estado para mudar o comportamento*/
+      email: '',
+      password: ''
     };
     /*this.toggleShowPassword = this.toggleShowPassword.bind(this); não precisa disso se usar arrow function */
   }
@@ -16,15 +20,66 @@ class PasswordInput extends React.Component {
       inputType: inputType === 'password' ? 'text' : 'password'
     });
   }  
+/* essas duas funções são substituidas por handleChange
+  handleEmailChange = (event) => {
+    //console.log(event);
+    const {target} = event;
+    this.setState({
+      email: target.value 
+    });
+  } 
 
-  render () {
+  handlePasswordChange = (event) => { // como ´e muito similar ao de cima, podemos fazer um hadleChange generico
+    const {target} = event
+    this.setState({
+      password: target.value    
+    });
+  }
+  */
+
+  handleChange = (event) => {
+    const {target} = event;
+    this.setState({
+      [target.name]: target.value
+    })
+  }
+
+  render () {  
+    const {email, password} = this.state;
+
+    const isFormValid = email && password;
+
     return (
       <>
+      <label htmlFor='email'>
+        Email:
+        <input type='text'
+        id="email"
+        name='email'
+        onChange={this.handleChange}
+        value={this.state.email} />
+      </label>
+      <br />
       <label htmlFor="password">
         senha:
-        <input type={this.state.inputType} id='password' name='password' />
+        <input type={this.state.inputType}
+        id='password'
+        name='password' 
+        onChange={this.handleChange}
+        value={this.state.password} />
       </label>
-      <button onClick={this.toggleShowPassword} >Mostrar</button> {/* Em react os eventos são escutados na própria tag */}
+      <button onClick={this.toggleShowPassword}
+      >Mostrar
+      </button> {/* Em react os eventos são escutados na própria tag */}
+      <br />
+      <br />
+      <br />
+      <button 
+        disabled={!isFormValid}
+        onClick={ () => this.props.funcao({email, password})}
+      >
+        Enviar para o pai
+        </button>
       </>
     )
   }
@@ -57,7 +112,7 @@ functio constructor().
 setState: é a função que modifica o valor do estado, essa função 
 está dentro da classe, para isso usamos this.setState() ela recebe dois parametro
 o primeiro é o novo estado que queremos alterar. Esse novo estado é um objeto, sempre
-um objeto, pq nosso estado é um objeto.
+um objeto, pq nosso estado é um objeto. 
 o valor passado é a chave do objeto que queremos alterar. nesse caso a chave inputType
 e o valor que queremos alterar é para text, mas podemos fazer uma condicional para ir e voltar de text para password,
 é necessário tambem usar um bind, sem isso não consegue acessar o setState do this,
@@ -68,6 +123,11 @@ this.toggleShowPassword = this.toggleShowPassword.bind(this);
 
 se usar arrow funciton no toggleShowPassword, não é necessário usar o bind
 
+Para acessar o estado é state.email
+para modificar o estado é set.state
+
+Toda vez que o estado muda o componente renderiza de novo
+ 
 */
  
-export default PasswordInput;
+export default Input;
